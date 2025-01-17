@@ -1,0 +1,181 @@
+@import "variables.scss";
+
+@mixin box {
+  background-color: $background;
+  border-radius: 30px;
+}
+
+body {
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+video {
+  position: fixed;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: $background;
+  height: 70px;
+  width: 50%;
+  border-radius: 0px 0px 30px 30px;
+  p {
+    font-size: 40px;
+    font-weight: bolder;
+    font-style: italic;
+    margin: 0px;
+  }
+  img {
+    position: absolute;
+    top: 100px;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+main {
+  max-width: 1400px;
+  margin: 0px 10px 0px 10px;
+  .presentation {
+    @include box;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 80px;
+    padding: 50px 20px 20px 20px;
+  }
+  .projects {
+    @include box;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    article {
+      font-weight: bolder;
+      box-shadow: 5px 5px 5px gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      border: solid lightblue;
+      border-width: 0px 20px 2px 20px;
+      width: 420px;
+      height: 250px;
+      background-color: $background;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      .head-article {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: lightblue;
+        * {
+          width: 33%;
+        }
+        .time {
+          text-align: start;
+        }
+        .name {
+          text-align: center;
+        }
+        .langages {
+          display: flex;
+          align-items: center;
+          justify-content: right;
+          i {
+            color: goldenrod;
+            width: 20px;
+          }
+        }
+      }
+
+      .doors {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        width: 100%;
+        background-size: cover;
+        overflow: hidden;
+
+        a {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .door {
+          position: absolute;
+          display: flex;
+          width: 50%;
+          height: 100%;
+          background-color: blue;
+          transition: width 1500ms 300ms;
+          overflow: hidden;
+        }
+        .left-door {
+          left: 0px;
+        }
+        .right-door {
+          right: 0px;
+        }
+        .lock {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 1;
+          background-color: grey;
+          width: 50px;
+          height: 50px;
+          border-radius: 40px;
+          left: 0px;
+          transition: left 1500ms 300ms;
+        }
+        .hole-lock {
+          width: 40px;
+          height: 4px;
+          border-radius: 2px;
+          background-color: yellow;
+          opacity: 0.3;
+          rotate: 0deg;
+          transition: all 300ms 0ms;
+        }
+
+        &:hover > .left-door {
+          width: 0%;
+          transform-origin: left;
+        }
+        &:hover > .right-door {
+          width: 0%;
+          transform-origin: right;
+        }
+        &:hover > .lock {
+          left: -190px;
+        }
+        &:hover > .lock > .hole-lock {
+          rotate: 90deg;
+          opacity: 1;
+        }
+      }
+
+      .date {
+        margin: 0px;
+        background-color: lightblue;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>E-choc</title>
+    <script
+      src="https://kit.fontawesome.com/81ae1326c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/CSS/e-choc.css" />
+    <script type="module" src="scripts/e-choc.js"></script>
+  </head>
+  <body>
+    <section class="products-list-box hide-display">
+      <div class="products-list">
+        <h2>Votre panier</h2>
+        <hr />
+        <table class="choosed-products">
+          <tbody>
+            <tr>
+              <th>Nom</th>
+              <th>Prix (poids)</th>
+              <th>Quantité</th>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <p class="total">Aucun article dans votre panier.</p>
+        <hr />
+        <button>Commandez !</button>
+        <p class="error"></p>
+      </div>
+    </section>
+    <header>
+      <div class="little-box little-box-logo">
+        <img
+          src="images/e-choc/logo_e-choc_zoom.png"
+          alt="logo de E-choc"
+          class="logo"
+        />
+      </div>
+      <div class="box-presentation">
+        <h1>E-CHOC</h1>
+        <p>
+          E-choc ? Un gage de qualité et des chocolats authentiques, délicieux,
+          biologiques !
+        </p>
+      </div>
+      <div class="little-box little-box-cart">
+        <div class="cart">
+          <i class="fa-solid fa-reply-all hide"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="box-arrow-left">
+        <i class="arrow fa-solid fa-circle-arrow-left"></i>
+      </section>
+      <section class="container-products" style="left: 20%"></section>
+      <section class="box-arrow-right">
+        <i class="arrow fa-solid fa-circle-arrow-right"></i>
+      </section>
+    </main>
+    <footer>
+      <a href="mailto:une.adresse@fictive.fr" class="contact">Me contacter</a>
+    </footer>
+  </body>
+</html>

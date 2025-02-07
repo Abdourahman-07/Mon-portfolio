@@ -1,23 +1,30 @@
 body {
+  min-height: 100vh;
   margin: 0px;
-  overflow: hidden;
+  padding: 0px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 video {
   position: fixed;
   z-index: -1;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 header {
+  position: relative;
+  padding: 10px 10px 50px 10px;
   display: flex;
   justify-content: center;
   background-color: rgb(234, 235, 232);
-  height: 70px;
-  width: 50%;
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 50% 50%;
+  text-align: center;
 }
 header p {
   font-size: 40px;
@@ -27,7 +34,7 @@ header p {
 }
 header img {
   position: absolute;
-  top: 100px;
+  bottom: -50px;
   border-radius: 50px;
   height: 100px;
   width: 100px;
@@ -35,7 +42,6 @@ header img {
 
 main {
   max-width: 1400px;
-  margin: 0px 10px 0px 10px;
 }
 main .presentation {
   background-color: rgb(234, 235, 232);
@@ -43,7 +49,7 @@ main .presentation {
   font-size: 30px;
   text-align: center;
   margin-top: 80px;
-  padding: 50px 20px 20px 20px;
+  padding: 20px;
 }
 main .projects {
   background-color: rgb(234, 235, 232);
@@ -52,7 +58,7 @@ main .projects {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 main .projects article {
   font-weight: bolder;
@@ -63,7 +69,8 @@ main .projects article {
   box-sizing: border-box;
   border: solid lightblue;
   border-width: 0px 20px 2px 20px;
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   height: 250px;
   background-color: rgb(234, 235, 232);
   border-radius: 20px;
@@ -111,36 +118,34 @@ main .projects article .doors a {
 main .projects article .doors img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main .projects article .doors .door {
-  position: absolute;
-  display: flex;
-  width: 50%;
+  position: relative;
+  width: 100%;
   height: 100%;
   background-color: blue;
-  transition: width 1500ms 300ms;
-  overflow: hidden;
+  transition: all 1500ms 300ms;
 }
 main .projects article .doors .left-door {
-  left: 0px;
+  left: 0%;
+  display: flex;
+  align-items: center;
 }
-main .projects article .doors .right-door {
-  right: 0px;
-}
-main .projects article .doors .lock {
+main .projects article .doors .left-door .lock {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 4;
   background-color: grey;
   width: 50px;
   height: 50px;
-  border-radius: 40px;
-  left: 0px;
-  transition: left 1500ms 300ms;
+  border-radius: 50%;
+  right: -25px;
 }
-main .projects article .doors .hole-lock {
+main .projects article .doors .left-door .hole-lock {
   width: 40px;
   height: 4px;
   border-radius: 2px;
@@ -149,19 +154,17 @@ main .projects article .doors .hole-lock {
   rotate: 0deg;
   transition: all 300ms 0ms;
 }
+main .projects article .doors .right-door {
+  right: 0%;
+}
 main .projects article .doors:hover > .left-door {
-  width: 0%;
-  transform-origin: left;
+  left: -50%;
 }
 main .projects article .doors:hover > .right-door {
-  width: 0%;
-  transform-origin: right;
+  right: -50%;
 }
-main .projects article .doors:hover > .lock {
-  left: -190px;
-}
-main .projects article .doors:hover > .lock > .hole-lock {
-  rotate: 90deg;
+main .projects article .doors:hover > .left-door > .lock > .hole-lock {
+  rotate: -90deg;
   opacity: 1;
 }
 main .projects article .date {
@@ -169,4 +172,34 @@ main .projects article .date {
   background-color: lightblue;
   width: 100%;
   text-align: center;
+}
+
+footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(234, 235, 232);
+  border-radius: 50% 50% 0px 0px;
+  width: 100%;
+  max-width: 500px;
+}
+footer a {
+  position: relative;
+  color: black;
+  font-size: 2em;
+  font-weight: 900;
+  text-decoration: none;
+  text-shadow: 3px 3px 3px gray;
+  margin: 10px;
+}
+footer a:hover {
+  text-shadow: none;
+  top: 3px;
+  left: 3px;
+}
+
+@media all and (max-width: 500px) {
+  main .presentation {
+    font-size: 1.5em;
+  }
 }/*# sourceMappingURL=index.css.map */
